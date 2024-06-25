@@ -18,12 +18,10 @@ Ensure you have the following installed:
     ```
 
 2. **Create a `.env` file in dotenv_files:**
-    ```env
+    ```.env
 SECRET_KEY="CHANGE-ME"
-
 DEBUG="1"
 ALLOWED_HOSTS="127.0.0.1, localhost"
-
 DB_ENGINE="django.db.backends.postgresql"
 POSTGRES_DB="CHANGE-ME"
 POSTGRES_USER="CHANGE-ME"
