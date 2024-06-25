@@ -37,7 +37,7 @@ Ensure you have the following installed:
 
 4. **Apply create a superuser:**
     ```bash
-    docker-compose exec web python manage.py createsuperuser
+    docker-compose exec djangoapp python manage.py createsuperuser
     ```
 
 5. **Access the application:**
