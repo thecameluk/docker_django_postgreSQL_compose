@@ -51,3 +51,42 @@ Ensure you have the following installed:
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+
+
+### Troubleshooting
+
+If you encounter the following error:
+
+    ```
+    ...
+    PermissionError: [Errno 13] Permission denied: '/data/web/static/admin'
+    ...
+    ```
+This error occurs because the application does not have the necessary permissions to write to the `/data/web/static/admin` directory. To resolve this, you need to change the ownership of the local directory to your user.
+
+#### Solution
+
+1. Stop the Docker containers:
+
+    ```bash
+    docker-compose down
+    ```
+
+2. Change the ownership of the `data/web/static` directory:
+
+    ```bash
+    sudo chown "$USER":"$USER" data/web/static -R
+    ```
+
+3. Restart the Docker containers:
+
+    ```bash
+    docker-compose up -d
+    ```
+
+After following these steps, the permissions should be correctly set, and the error should be resolved.
+
+### Usage
+
+After setting up the project, you can access the Django application at `http://"youipserver":8000`.
